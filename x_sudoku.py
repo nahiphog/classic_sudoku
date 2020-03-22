@@ -1,4 +1,23 @@
-x_sudoku = True
+######################################################
+###### Solve a Knight Sudoku
+######################################################
+
+import numpy as np
+
+# INSERT SUDOKU GRID HERE
+sudoku_grid = [
+[4, 0, 6, 0, 0, 0, 0, 3, 0],
+[0, 0, 0, 0, 0, 0, 0, 5, 1],
+[0, 0, 8, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 3],
+[0, 0, 4, 6, 0, 9, 2, 0, 0],
+[5, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 5, 0, 0],
+[9, 4, 0, 0, 0, 0, 0, 0, 0],
+[0, 2, 0, 0, 0, 0, 3, 0, 9]
+]
+
+knight_sudoku = True
 
 # Backtracking function
 def possible_movement(x,y,n):
@@ -36,3 +55,38 @@ def possible_movement(x,y,n):
                 return False
             
     return True
+
+def print_nice_result():
+    print("")
+    row_number = 0
+    print("-------------------------")
+    for row in sudoku_grid:
+        print("|" , end = ' ')
+        column_number = 0
+        for item in row:
+            print(item, end=' ')
+            column_number += 1
+            if column_number % 3 == 0:
+                print("|", end= ' ')
+        print("")
+        row_number += 1
+        if row_number % 3 == 0:
+            print("-------------------------")
+
+
+
+def solve_this_sudoku():
+    global sudoku_grid
+    for y in range(0, 8 + 1):
+        for x in range(0, 8 + 1):
+            if sudoku_grid[y][x] == 0:
+                for n in range(1,9+1):
+                    if possible_movement(x,y,n):
+                        sudoku_grid[y][x] = n
+                        solve_this_sudoku()
+                        sudoku_grid[y][x] = 0
+                return
+
+    print_nice_result()
+
+solve_this_sudoku()
