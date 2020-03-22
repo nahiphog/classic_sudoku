@@ -1,5 +1,6 @@
 ######################################################
 ###### Solve a Knight Sudoku
+###### The two longest diagonals must all contain the digits 1 to 9
 ######################################################
 
 import numpy as np
