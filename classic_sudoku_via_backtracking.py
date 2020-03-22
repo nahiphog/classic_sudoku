@@ -41,10 +41,25 @@ def possible_movement(x,y,n):
             
     return True
 
-total_number_solutions = 0
+def print_nice_result():
+    print("")
+    row_number = 0
+    print("-------------------------")
+    for row in sudoku_grid:
+        print("|" , end = ' ')
+        column_number = 0
+        for item in row:
+            print(item, end=' ')
+            column_number += 1
+            if column_number % 3 == 0:
+                print("|", end= ' ')
+        print("")
+        row_number += 1
+        if row_number % 3 == 0:
+            print("-------------------------")
 
 def solve_this_sudoku():
-    global sudoku_grid, total_number_solutions
+    global sudoku_grid
     for y in range(0, 8 + 1):
         for x in range(0, 8 + 1):
             if sudoku_grid[y][x] == 0:
@@ -55,10 +70,6 @@ def solve_this_sudoku():
                         sudoku_grid[y][x] = 0
                 return
 
-    total_number_solutions += 1
-    # all_possible_grids.append(sudoku_grid)
-    print(total_number_solutions)
-    print(np.matrix(sudoku_grid))
-    print("\n")
+    print_nice_result()
 
 solve_this_sudoku()
