@@ -22,12 +22,12 @@ knight_sudoku = True
 def possible_movement(x,y,n):
     global sudoku_grid
 
-    # Sudoku rule 1: Check whether whether N has appeared in that column
+    # Sudoku rule 1: Check whether whether N has appeared in that row
     for i in range(9):
         if sudoku_grid[y][i] == n:
             return False
     
-    # Sudoku rule 2: Check whether whether N has appeared in that row
+    # Sudoku rule 2: Check whether whether N has appeared in that column
     for i in range(9):
         if sudoku_grid[i][x] == n:
             return False
