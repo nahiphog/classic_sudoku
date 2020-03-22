@@ -2,8 +2,6 @@
 ###### [1] Solve a Classic Sudoku puzzle and display all solutions
 ######################################################
 
-import numpy as np
-
 # INSERT SUDOKU GRID HERE
 sudoku_grid = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0],
