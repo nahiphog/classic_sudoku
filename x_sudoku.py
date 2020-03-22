@@ -3,8 +3,6 @@
 ###### The two longest diagonals must all contain the digits 1 to 9
 ######################################################
 
-import numpy as np
-
 # INSERT SUDOKU GRID HERE
 sudoku_grid = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0],
