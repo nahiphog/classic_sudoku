@@ -42,7 +42,7 @@ def possible_movement(x,y,n):
             if sudoku_grid[y0 + i][x0 + j] == n:
                 return False
 
-    # Custom sudoku rule (1): X-sudoku: Check whether the cell is in one of the diagonals. If yes, check whether N has has appeared in its respective diagonal(s)
+    # Custom sudoku rule: X-sudoku
     if x_sudoku:
         # Check whether its in the main diagonal
         if (x == y):
