@@ -3,8 +3,6 @@
 ###### You cannot have the same number twice within a knight's move
 ######################################################
 
-import numpy as np
-
 # INSERT SUDOKU GRID HERE
 sudoku_grid = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0],
