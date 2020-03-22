@@ -42,7 +42,8 @@ def possible_movement(x,y,n):
 
     # Custom sudoku rule: King Sudoku 
     if king_sudoku:
-        knight_move = [ [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1], [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1] ]
+        knight_move = [ [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1], 
+                       [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1] ]
         for element in knight_move:
             if element[0] in [0,1,2,3,4,5,6,7,8]:
                     if element[1] in [0,1,2,3,4,5,6,7,8]:
