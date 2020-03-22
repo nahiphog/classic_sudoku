@@ -1,5 +1,6 @@
 ######################################################
 ###### Solve a Knight Sudoku
+###### You cannot have the same number twice within a knight's move
 ######################################################
 
 import numpy as np
