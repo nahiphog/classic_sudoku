@@ -1,6 +1,6 @@
 ######################################################
 ###### Solve a Knight Sudoku
-###### The two longest diagonals must all contain the digits 1 to 9
+###### You cannot have the same number twice within a Knight's move
 ######################################################
 
 # INSERT SUDOKU GRID HERE
@@ -16,7 +16,7 @@ sudoku_grid = [
 [0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
-knight_sudoku = True
+x_sudoku = True
 
 # Backtracking function
 def possible_movement(x,y,n):
