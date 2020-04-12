@@ -37,7 +37,7 @@ sudoku_grid = []
 
 possible_numbers = [ f'{integer}' for integer in range(10)]
 for element in relevant_rows:
-    text = element.split()
+    text = list(element)
     add_this_grid = []
     for each_entry in text:
         if each_entry in possible_numbers :
