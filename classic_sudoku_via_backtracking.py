@@ -17,8 +17,6 @@ raw_sudoku_grid_11 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
 raw_sudoku_grid_12 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
 raw_sudoku_grid_13 = ' ------------------------- '
 
-text = raw_sudoku_grid_02.split()
-
 relevant_rows = [ raw_sudoku_grid_02, raw_sudoku_grid_03, raw_sudoku_grid_04, 
                  raw_sudoku_grid_06, raw_sudoku_grid_07, raw_sudoku_grid_08, 
                  raw_sudoku_grid_10, raw_sudoku_grid_11, raw_sudoku_grid_12 ]
