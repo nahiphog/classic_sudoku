@@ -2,34 +2,29 @@
 ###### [1] Solve a Classic Sudoku puzzle and display all solutions
 ######################################################
 
-# Input Sudoku grid here
-raw_sudoku_grid_01 = ' ------------------------- '
-raw_sudoku_grid_02 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_03 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_04 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_05 = ' ------------------------- '
-raw_sudoku_grid_06 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_07 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_08 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_09 = ' ------------------------- '
-raw_sudoku_grid_10 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_11 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_12 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
-raw_sudoku_grid_13 = ' ------------------------- '
+# INPUT SUDOKU GRID HERE
+nil_1 = ' ------------------------- '
+row_1 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_2 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_3 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+nil_2 = ' ------------------------- '
+row_4 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_5 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_6 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+nil_3 = ' ------------------------- '
+row_7 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_8 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+row_9 = ' | 0 0 0 | 0 0 0 | 0 0 0 | '
+nil_4 = ' ------------------------- '
 
-relevant_rows = [ raw_sudoku_grid_02, raw_sudoku_grid_03, raw_sudoku_grid_04, 
-                 raw_sudoku_grid_06, raw_sudoku_grid_07, raw_sudoku_grid_08, 
-                 raw_sudoku_grid_10, raw_sudoku_grid_11, raw_sudoku_grid_12 ]
+sudoku_grid , possible_numbers = [], [ f'{integer}' for integer in range(10)]
 
-sudoku_grid = []
-
-possible_numbers = [ f'{integer}' for integer in range(10)]
-for element in relevant_rows:
-    text = list(element)
+for index in range(9):
+    this_row = eval('row_' + str(index + 1) )
+    text = list(this_row)
     add_this_grid = []
     for each_entry in text:
-        if each_entry in possible_numbers :
-            add_this_grid.append(int(each_entry))
+        if each_entry in possible_numbers: add_this_grid.append(int(each_entry))
     sudoku_grid.append(add_this_grid)
 
 # Backtracking function
