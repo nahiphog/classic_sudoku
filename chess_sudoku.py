@@ -1,7 +1,7 @@
 ######################################################
-###### Solve a Queen Sudoku
-###### You cannot have the 9 appear twice in a Queen's move
+###### Solve a Chess sudoku: King/Knight/Queen
 ######################################################
+king_sudoku = False ; knight_sudoku = False ; queen_sudoku = False
 
 # INPUT SUDOKU GRID HERE
 nil_1 = ' ------------------------- '
@@ -29,24 +29,6 @@ for index in range(9):
         elif each_entry in possible_numbers: add_this_grid.append(int(each_entry))
     sudoku_grid.append(add_this_grid)
 
-def print_nice_result():
-    print("")
-    row_number = 0
-    print("-------------------------")
-    for row in sudoku_grid:
-        print("|" , end = ' ')
-        column_number = 0
-        for item in row:
-            print(item, end=' ')
-            column_number += 1
-            if column_number % 3 == 0:
-                print("|", end= ' ')
-        print("")
-        row_number += 1
-        if row_number % 3 == 0:
-            print("-------------------------")
-
-queen_sudoku = True
 
 # Backtracking function
 def possible_movement(x,y,n):
@@ -69,6 +51,26 @@ def possible_movement(x,y,n):
         for j in range(0,3):
             if sudoku_grid[y0 + i][x0 + j] == n:
                 return False
+
+    # Custom sudoku rule: King Sudoku 
+    if king_sudoku:
+        knight_move = [ [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1], 
+                       [x + 1, y + 1], [x + 1 , y - 1] , [x - 1, y + 1], [x - 1, y - 1] ]
+        for element in knight_move:
+            if element[0] in [0,1,2,3,4,5,6,7,8]:
+                    if element[1] in [0,1,2,3,4,5,6,7,8]:
+                        if sudoku_grid[ element[1] ][ element[0] ] == n:
+                            return False
+
+    # Custom sudoku rule: Knight Sudoku 
+    if knight_sudoku:
+        knight_move = [ [x + 2, y + 1], [x + 2 , y - 1] , [x - 2, y + 1], [x - 2, y - 1], 
+                       [x + 1, y + 2], [x + 1 , y - 2] , [x - 1, y + 2], [x - 1, y - 2] ]
+        for element in knight_move:
+            if element[0] in [0,1,2,3,4,5,6,7,8]:
+                    if element[1] in [0,1,2,3,4,5,6,7,8]:
+                        if sudoku_grid[ element[1] ][ element[0] ] == n:
+                            return False
 
     # Custom sudoku rule: Queen Sudoku 
     if queen_sudoku:
@@ -114,6 +116,25 @@ def possible_movement(x,y,n):
                                 return False
 
     return True
+
+def print_nice_result():
+    print("")
+    row_number = 0
+    print("-------------------------")
+    for row in sudoku_grid:
+        print("|" , end = ' ')
+        column_number = 0
+        for item in row:
+            print(item, end=' ')
+            column_number += 1
+            if column_number % 3 == 0:
+                print("|", end= ' ')
+        print("")
+        row_number += 1
+        if row_number % 3 == 0:
+            print("-------------------------")
+
+# print_nice_result()
 
 
 def solve_this_sudoku():
