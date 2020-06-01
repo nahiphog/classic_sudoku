@@ -82,7 +82,7 @@ def possible_movement(x,y,n):
             while (x0 >=0) and (y0 >0):
                 x0 -= 1
                 y0 -= 1
-                if (x_0 >= 0) and (y0 >= 0):
+                if (x0 >= 0) and (y0 >= 0):
                     queen_move.append( [x0, y0] )
             # North-east direction
             x0 = x
@@ -90,7 +90,7 @@ def possible_movement(x,y,n):
             while (x0 >=0) and (y0 >0):
                 x0 += 1
                 y0 -= 1
-                if (x_0 >= 0) and (y0 >= 0):
+                if (x0 >= 0) and (y0 >= 0):
                     queen_move.append( [x0, y0] )
             # South-west direction
             x0 = x
@@ -98,7 +98,7 @@ def possible_movement(x,y,n):
             while (x0 >=0) and (y0 >0):
                 x0 -= 1
                 y0 += 1
-                if (x_0 >= 0) and (y0 >= 0):
+                if (x0 >= 0) and (y0 >= 0):
                     queen_move.append( [x0, y0] )
             # South-east direction
             x0 = x
@@ -106,7 +106,7 @@ def possible_movement(x,y,n):
             while (x0 >=0) and (y0 >0):
                 x0 += 1
                 y0 += 1
-                if (x_0 >= 0) and (y0 >= 0):
+                if (x0 >= 0) and (y0 >= 0):
                     queen_move.append( [x0, y0] )
 
             for element in queen_move:
