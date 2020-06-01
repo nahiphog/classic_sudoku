@@ -75,11 +75,11 @@ def possible_movement(x,y,n):
     # Custom sudoku rule: Queen Sudoku 
     if queen_sudoku:
         if n == 9:
-            queen_move = [ ]
+            queen_move = []
             # North-west direction
             x0 = x
             y0 = y
-            while (x0 >=0) and (y0 >0):
+            while (x0 >=0) and (y0 > 0):
                 x0 -= 1
                 y0 -= 1
                 if (x0 >= 0) and (y0 >= 0):
@@ -87,7 +87,7 @@ def possible_movement(x,y,n):
             # North-east direction
             x0 = x
             y0 = y
-            while (x0 >=0) and (y0 >0):
+            while (x0 <= 8) and (y0 >0):
                 x0 += 1
                 y0 -= 1
                 if (x0 >= 0) and (y0 >= 0):
@@ -95,7 +95,7 @@ def possible_movement(x,y,n):
             # South-west direction
             x0 = x
             y0 = y
-            while (x0 >=0) and (y0 >0):
+            while (x0 >=0) and (y0 <= 8):
                 x0 -= 1
                 y0 += 1
                 if (x0 >= 0) and (y0 >= 0):
@@ -103,7 +103,7 @@ def possible_movement(x,y,n):
             # South-east direction
             x0 = x
             y0 = y
-            while (x0 >=0) and (y0 >0):
+            while (x0 <= 8) and (y0 <= 8):
                 x0 += 1
                 y0 += 1
                 if (x0 >= 0) and (y0 >= 0):
